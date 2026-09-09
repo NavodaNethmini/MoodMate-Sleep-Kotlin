@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+
+    <!-- 60% Main Background -->
+    <color name="moodmate_background">#F7F8FC</color>
+
+    <!-- 30% Primary / Secondary -->
+    <color name="moodmate_primary">#4E587D</color>
+    <color name="moodmate_primary_dark">#333B5C</color>
+    <color name="moodmate_lavender">#C9CDE9</color>
+    <color name="moodmate_lavender_light">#ECEEF8</color>
+
+    <!-- 10% Accent -->
+    <color name="moodmate_teal">#78B8A8</color>
+    <color name="moodmate_teal_light">#DDEFEA</color>
+
+    <!-- Text -->
+    <color name="moodmate_text_primary">#20283A</color>
+    <color name="moodmate_text_secondary">#6F7788</color>
+    <color name="moodmate_text_light">#FFFFFF</color>
+
+    <!-- Surfaces -->
+    <color name="moodmate_card">#FFFFFF</color>
+    <color name="moodmate_divider">#E7E9F0</color>
+
+    <!-- Feedback -->
+    <color name="moodmate_success">#78B8A8</color>
+    <color name="moodmate_warning">#D9B56D</color>
+    <color name="moodmate_error">#C85C5C</color>
+
+    <!-- Sleep Mode -->
+    <color name="moodmate_sleep_background">#353D61</color>
+    <color name="moodmate_sleep_card">#444D73</color>
+
 </resources>

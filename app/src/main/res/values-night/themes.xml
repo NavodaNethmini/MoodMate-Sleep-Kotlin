@@ -1,7 +1,20 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.MoodMateSleep" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.MoodMateSleep" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <item name="colorPrimary">@color/moodmate_primary</item>
+
+        <item name="colorSecondary">@color/moodmate_teal</item>
+
+        <item name="android:colorAccent">@color/moodmate_teal</item>
+
+        <item name="android:statusBarColor">@color/moodmate_background</item>
+
+        <item name="android:navigationBarColor">@color/moodmate_background</item>
+
+        <item name="android:windowBackground">@color/moodmate_background</item>
+
     </style>
+
 </resources>
