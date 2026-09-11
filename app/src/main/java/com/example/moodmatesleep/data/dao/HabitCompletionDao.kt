@@ -11,7 +11,9 @@ import kotlinx.coroutines.flow.Flow
 interface HabitCompletionDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertCompletion(completion: HabitCompletion)
+    suspend fun insertCompletion(
+        completion: HabitCompletion
+    )
 
     @Query(
         """
@@ -38,6 +40,17 @@ interface HabitCompletionDao {
 
     @Query(
         """
+        SELECT habitId FROM habit_completions
+        WHERE completionDate = :date
+        AND completed = 1
+        """
+    )
+    suspend fun getCompletedHabitIdsForDate(
+        date: String
+    ): List<Long>
+
+    @Query(
+        """
         DELETE FROM habit_completions
         WHERE habitId = :habitId
         AND completionDate = :date
@@ -46,5 +59,15 @@ interface HabitCompletionDao {
     suspend fun removeCompletion(
         habitId: Long,
         date: String
+    )
+
+    @Query(
+        """
+        DELETE FROM habit_completions
+        WHERE habitId = :habitId
+        """
+    )
+    suspend fun deleteCompletionsForHabit(
+        habitId: Long
     )
 }
