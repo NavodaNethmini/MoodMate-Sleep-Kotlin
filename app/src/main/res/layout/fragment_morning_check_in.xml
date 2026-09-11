@@ -1,21 +1,295 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/moodmate_background">
+    android:background="@color/moodmate_background"
+    android:fillViewport="true"
+    android:scrollbars="none">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Morning Mood &amp; Energy"
-        android:textColor="@color/moodmate_text_primary"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingTop="32dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="32dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Morning Check-In"
+            android:textColor="@color/moodmate_text_primary"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="How are you feeling after your sleep?"
+            android:textColor="@color/moodmate_text_secondary"
+            android:textSize="14sp" />
+
+        <!-- Mood Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="How do you feel this morning?"
+            android:textColor="@color/moodmate_text_primary"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Choose the mood that feels closest to you."
+            android:textColor="@color/moodmate_text_secondary"
+            android:textSize="12sp" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupMood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:selectionRequired="false"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipRefreshed"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="Refreshed" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipHappy"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="Happy" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCalm"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="Calm" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipNeutral"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="Neutral" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipTired"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="Tired" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipStressed"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="Stressed" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <!-- Energy Section -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            app:cardBackgroundColor="@color/moodmate_card"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Energy Level"
+                        android:textColor="@color/moodmate_text_primary"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvEnergyValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="50%"
+                        android:textColor="@color/moodmate_primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="How energetic do you feel right now?"
+                    android:textColor="@color/moodmate_text_secondary"
+                    android:textSize="12sp" />
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/sliderEnergy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:value="50"
+                    android:valueFrom="0"
+                    android:valueTo="100"
+                    android:stepSize="5" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Low"
+                        android:textColor="@color/moodmate_text_secondary"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="High"
+                        android:textColor="@color/moodmate_text_secondary"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Factors -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:text="What's affecting your mood today?"
+            android:textColor="@color/moodmate_text_primary"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="You can choose more than one."
+            android:textColor="@color/moodmate_text_secondary"
+            android:textSize="12sp" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupMoodFactors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:singleSelection="false">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipFactorSleep"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="Sleep" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipFactorStudy"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="Study" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipFactorWork"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="Work" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipFactorExercise"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="Exercise" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipFactorScreenTime"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="Screen Time" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipFactorSocial"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="Social" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFinishCheckIn"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginTop="30dp"
+            android:text="Finish Check-In"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/moodmate_primary"
+            app:cornerRadius="28dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="Your check-in helps MoodMate understand your sleep and mood patterns."
+            android:textColor="@color/moodmate_text_secondary"
+            android:textSize="10sp" />
+
+    </LinearLayout>
+
+</ScrollView>
