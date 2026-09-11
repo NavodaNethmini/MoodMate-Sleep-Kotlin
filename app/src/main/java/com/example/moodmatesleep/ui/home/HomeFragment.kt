@@ -1,6 +1,78 @@
 package com.example.moodmatesleep.ui.home
 
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.moodmatesleep.R
+import androidx.lifecycle.lifecycleScope
+import com.example.moodmatesleep.data.database.MoodMateDatabase
+import com.example.moodmatesleep.databinding.FragmentHomeBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
-class HomeFragment : Fragment(R.layout.fragment_home)
+class HomeFragment : Fragment() {
+
+    private var _binding: FragmentHomeBinding? = null
+
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+
+        _binding =
+            FragmentHomeBinding.inflate(
+                inflater,
+                container,
+                false
+            )
+
+        return binding.root
+    }
+
+    override fun onViewCreated(
+        view: View,
+        savedInstanceState: Bundle?
+    ) {
+        super.onViewCreated(
+            view,
+            savedInstanceState
+        )
+
+        loadUserProfile()
+    }
+
+    private fun loadUserProfile() {
+
+        val database =
+            MoodMateDatabase.getDatabase(
+                requireContext()
+            )
+
+        viewLifecycleOwner.lifecycleScope.launch {
+
+            val profile =
+                withContext(Dispatchers.IO) {
+
+                    database.userProfileDao()
+                        .getProfile()
+                }
+
+            profile?.let {
+
+                binding.tvHomeTitle.text =
+                    "Good morning, ${it.name}"
+            }
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+
+        _binding = null
+    }
+}
