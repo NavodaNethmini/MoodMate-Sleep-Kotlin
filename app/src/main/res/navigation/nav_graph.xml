@@ -76,7 +76,17 @@
     <fragment
         android:id="@+id/sleepCheckInFragment"
         android:name="com.example.moodmatesleep.ui.sleep.SleepCheckInFragment"
-        android:label="Check-In" />
+        android:label="Check-In">
+
+        <action
+            android:id="@+id/action_sleepCheckInFragment_to_morningCheckInFragment"
+            app:destination="@id/morningCheckInFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/morningCheckInFragment"
+        android:name="com.example.moodmatesleep.ui.morning.MorningCheckInFragment"
+        android:label="Morning Check-In" />
 
     <fragment
         android:id="@+id/habitsFragment"

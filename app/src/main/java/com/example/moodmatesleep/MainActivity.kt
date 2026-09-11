@@ -43,21 +43,23 @@ class MainActivity : AppCompatActivity() {
             }
             when (destination.id) {
 
-            R.id.splashFragment,
-            R.id.welcomeFragment,
-            R.id.readyForBedFragment,
-            R.id.sleepStartedFragment -> {
+                R.id.splashFragment,
+                R.id.welcomeFragment,
+                R.id.readyForBedFragment,
+                R.id.sleepStartedFragment,
+                R.id.sleepCheckInFragment,
+                R.id.morningCheckInFragment -> {
 
-                binding.bottomNavigation.visibility =
-                    View.GONE
-            }
+                    binding.bottomNavigation.visibility =
+                        View.GONE
+                }
 
-            else -> {
+                else -> {
 
-                binding.bottomNavigation.visibility =
-                    View.VISIBLE
+                    binding.bottomNavigation.visibility =
+                        View.VISIBLE
+                }
             }
         }
         }
     }
-}
