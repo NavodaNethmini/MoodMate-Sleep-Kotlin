@@ -1,134 +1,324 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/moodmate_background"
-    android:padding="24dp">
+    android:background="@drawable/bg_splash_gradient"
+    android:fillViewport="true"
+    android:scrollbars="none">
 
-    <TextView
-        android:id="@+id/tvWelcomeTitle"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome to MoodMate Sleep"
-        android:textColor="@color/moodmate_text_primary"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="64dp" />
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingTop="36dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="28dp">
 
-    <TextView
-        android:id="@+id/tvWelcomeSubtitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Build healthier sleep habits and understand how your sleep connects with your mood."
-        android:textColor="@color/moodmate_text_secondary"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvWelcomeTitle" />
+        <!-- Top Moon Icon -->
+        <TextView
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bg_moon_square"
+            android:gravity="center"
+            android:text="☾"
+            android:textColor="@color/moodmate_primary"
+            android:textSize="32sp" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/nameInputLayout"
-        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:hint="Your Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvWelcomeSubtitle">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etName"
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tvWelcomeTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName" />
+            android:layout_marginTop="18dp"
+            android:gravity="center"
+            android:text="Welcome to MoodMate Sleep"
+            android:textColor="@color/moodmate_primary"
+            android:textSize="23sp"
+            android:textStyle="bold" />
 
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/tvSleepGoal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="Sleep Goal"
-        android:textColor="@color/moodmate_text_primary"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nameInputLayout" />
-
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chipGroupSleepGoal"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        app:singleSelection="true"
-        app:selectionRequired="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvSleepGoal">
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip6Hours"
-            style="@style/Widget.Material3.Chip.Filter"
-            android:layout_width="wrap_content"
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/tvWelcomeSubtitle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="6 hrs" />
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center"
+            android:lineSpacingExtra="2dp"
+            android:text="Build healthier sleep habits, understand your emotional patterns, and wake up refreshed."
+            android:textColor="@color/moodmate_text_secondary"
+            android:textSize="13sp" />
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip7Hours"
-            style="@style/Widget.Material3.Chip.Filter"
-            android:layout_width="wrap_content"
+        <!-- Feature Cards -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_marginTop="26dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <!-- Track Sleep -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_feature_card"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg_feature_icon"
+                    android:gravity="center"
+                    android:text="⌁"
+                    android:textColor="@color/moodmate_primary"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Track Sleep"
+                    android:textColor="@color/moodmate_text_primary"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+            <!-- Understand Mood -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_feature_card"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg_feature_icon"
+                    android:gravity="center"
+                    android:text="☺"
+                    android:textColor="@color/moodmate_primary"
+                    android:textSize="21sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Understand&#10;Mood"
+                    android:textColor="@color/moodmate_text_primary"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+            <!-- Build Better Habits -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_feature_card"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg_feature_icon"
+                    android:gravity="center"
+                    android:text="✓"
+                    android:textColor="@color/moodmate_primary"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Build Better&#10;Habits"
+                    android:textColor="@color/moodmate_text_primary"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Setup Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="7 hrs" />
+            android:layout_marginTop="22dp"
+            android:background="@drawable/bg_setup_card"
+            android:elevation="2dp"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip8Hours"
-            style="@style/Widget.Material3.Chip.Filter"
-            android:layout_width="wrap_content"
+            <!-- Name Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="What should we call you?"
+                android:textColor="@color/moodmate_primary"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <!-- Name Input -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameInputLayout"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Your Name"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/moodmate_text_primary"
+                    android:textSize="14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Sleep Goal -->
+            <TextView
+                android:id="@+id/tvSleepGoal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="Sleep Goal"
+                android:textColor="@color/moodmate_primary"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupSleepGoal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip6Hours"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6 hrs" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip7Hours"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7 hrs" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip8Hours"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="8 hrs" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip9Hours"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9 hrs" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- Ideal Bedtime -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Ideal Bedtime"
+                android:textColor="@color/moodmate_primary"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/bedtimeContainer"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_bedtime_field"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp">
+
+                <TextView
+                    android:id="@+id/tvBedtime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="10:30 PM"
+                    android:textColor="@color/moodmate_text_primary"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:gravity="center"
+                    android:text="◷"
+                    android:textColor="@color/moodmate_text_secondary"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Main Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStartJourney"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginTop="24dp"
+            android:text="Start My Journey  →"
+            android:textAllCaps="false"
+            android:textColor="@color/moodmate_text_light"
+            android:textSize="15sp"
+            app:backgroundTint="@color/moodmate_button"
+            app:cornerRadius="28dp" />
+
+        <!-- Privacy Text -->
+        <TextView
+            android:id="@+id/tvPrivacy"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="8 hrs" />
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="24dp"
+            android:gravity="center"
+            android:lineSpacingExtra="2dp"
+            android:text="By continuing, you agree to our Privacy Policy and acknowledge how we handle your sleep data securely."
+            android:textColor="@color/moodmate_text_secondary"
+            android:textSize="10sp" />
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip9Hours"
-            style="@style/Widget.Material3.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="9 hrs" />
+    </LinearLayout>
 
-    </com.google.android.material.chip.ChipGroup>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnStartJourney"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="40dp"
-        android:text="Start My Journey"
-        android:textAllCaps="false"
-        android:textSize="16sp"
-        app:backgroundTint="@color/moodmate_primary"
-        app:cornerRadius="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/chipGroupSleepGoal" />
-
-    <TextView
-        android:id="@+id/tvPrivacy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Your wellness records stay private on your device."
-        android:textColor="@color/moodmate_text_secondary"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnStartJourney" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

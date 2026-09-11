@@ -31,5 +31,18 @@
     <!-- Sleep Mode -->
     <color name="moodmate_sleep_background">#353D61</color>
     <color name="moodmate_sleep_card">#444D73</color>
+    <!-- Extra UI colors for Splash / Welcome -->
+    <color name="moodmate_splash_start">#FAFAFF</color>
+    <color name="moodmate_splash_end">#EEF0FC</color>
 
+    <color name="moodmate_icon_background">#E7ECFF</color>
+
+    <color name="moodmate_card_border">#E4E7F1</color>
+    <color name="moodmate_input_border">#D5D9E5</color>
+
+    <color name="moodmate_button">#6D7FAF</color>
+    <color name="moodmate_button_pressed">#5B6D9B</color>
+
+    <color name="moodmate_chip_background">#F8F9FC</color>
+    <color name="moodmate_chip_selected">#6D7FAF</color>
 </resources>
