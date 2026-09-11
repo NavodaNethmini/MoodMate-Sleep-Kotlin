@@ -11,6 +11,8 @@ import com.example.moodmatesleep.databinding.FragmentHomeBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import androidx.navigation.fragment.findNavController
+import com.example.moodmatesleep.R
 
 class HomeFragment : Fragment() {
 
@@ -44,6 +46,12 @@ class HomeFragment : Fragment() {
         )
 
         loadUserProfile()
+        binding.btnReadyForBed.setOnClickListener {
+
+            findNavController().navigate(
+                R.id.action_homeFragment_to_readyForBedFragment
+            )
+        }
     }
 
     private fun loadUserProfile() {

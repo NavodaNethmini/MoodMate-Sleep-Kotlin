@@ -41,6 +41,23 @@ class MainActivity : AppCompatActivity() {
                     binding.bottomNavigation.visibility = View.VISIBLE
                 }
             }
+            when (destination.id) {
+
+            R.id.splashFragment,
+            R.id.welcomeFragment,
+            R.id.readyForBedFragment,
+            R.id.sleepStartedFragment -> {
+
+                binding.bottomNavigation.visibility =
+                    View.GONE
+            }
+
+            else -> {
+
+                binding.bottomNavigation.visibility =
+                    View.VISIBLE
+            }
+        }
         }
     }
 }
