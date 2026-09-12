@@ -37,6 +37,8 @@ class HomeFragment : Fragment() {
     }
 
     override fun onViewCreated(
+
+
         view: View,
         savedInstanceState: Bundle?
     ) {
@@ -50,6 +52,12 @@ class HomeFragment : Fragment() {
 
             findNavController().navigate(
                 R.id.action_homeFragment_to_readyForBedFragment
+            )
+        }
+        binding.btnProfile.setOnClickListener {
+
+            findNavController().navigate(
+                R.id.action_homeFragment_to_profileFragment
             )
         }
     }

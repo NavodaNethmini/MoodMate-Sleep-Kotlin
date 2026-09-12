@@ -23,6 +23,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 import kotlin.math.roundToInt
+import androidx.navigation.fragment.findNavController
 
 class InsightsFragment : Fragment() {
 
@@ -63,6 +64,14 @@ class InsightsFragment : Fragment() {
         )
 
         loadInsights()
+        binding.btnViewSleepHistory
+            .setOnClickListener {
+
+                findNavController()
+                    .navigate(
+                        R.id.action_insightsFragment_to_sleepHistoryFragment
+                    )
+            }
     }
 
     override fun onResume() {

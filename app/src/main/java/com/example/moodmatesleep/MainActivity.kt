@@ -48,6 +48,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.readyForBedFragment,
                 R.id.sleepStartedFragment,
                 R.id.sleepCheckInFragment,
+                R.id.sleepHistoryFragment,
+                R.id.sleepDetailFragment,
+                R.id.profileFragment,
                 R.id.morningCheckInFragment -> {
 
                     binding.bottomNavigation.visibility =

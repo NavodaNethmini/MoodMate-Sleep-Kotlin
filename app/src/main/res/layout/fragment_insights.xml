@@ -291,6 +291,19 @@
                 android:orientation="vertical"
                 android:padding="18dp">
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnViewSleepHistory"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="22dp"
+                    android:text="View Sleep History"
+                    android:textAllCaps="false"
+                    android:textColor="@color/moodmate_primary"
+                    android:textSize="14sp"
+                    app:cornerRadius="22dp"
+                    app:strokeColor="@color/moodmate_primary" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

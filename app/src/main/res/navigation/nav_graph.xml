@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <navigation
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
     app:startDestination="@id/splashFragment">
+
+
+    <!-- ========================= -->
+    <!-- SPLASH -->
+    <!-- ========================= -->
 
     <fragment
         android:id="@+id/splashFragment"
@@ -24,6 +30,11 @@
 
     </fragment>
 
+
+    <!-- ========================= -->
+    <!-- WELCOME -->
+    <!-- ========================= -->
+
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.example.moodmatesleep.ui.welcome.WelcomeFragment"
@@ -37,16 +48,31 @@
 
     </fragment>
 
+
+    <!-- ========================= -->
+    <!-- HOME -->
+    <!-- ========================= -->
+
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.moodmatesleep.ui.home.HomeFragment"
         android:label="Home">
 
         <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+
+        <action
             android:id="@+id/action_homeFragment_to_readyForBedFragment"
             app:destination="@id/readyForBedFragment" />
 
     </fragment>
+
+
+    <!-- ========================= -->
+    <!-- READY FOR BED -->
+    <!-- ========================= -->
+
     <fragment
         android:id="@+id/readyForBedFragment"
         android:name="com.example.moodmatesleep.ui.sleep.ReadyForBedFragment"
@@ -59,6 +85,11 @@
             app:popUpToInclusive="true" />
 
     </fragment>
+
+
+    <!-- ========================= -->
+    <!-- SLEEP STARTED -->
+    <!-- ========================= -->
 
     <fragment
         android:id="@+id/sleepStartedFragment"
@@ -73,6 +104,11 @@
 
     </fragment>
 
+
+    <!-- ========================= -->
+    <!-- SLEEP CHECK-IN -->
+    <!-- ========================= -->
+
     <fragment
         android:id="@+id/sleepCheckInFragment"
         android:name="com.example.moodmatesleep.ui.sleep.SleepCheckInFragment"
@@ -83,6 +119,12 @@
             app:destination="@id/morningCheckInFragment" />
 
     </fragment>
+
+
+    <!-- ========================= -->
+    <!-- MORNING CHECK-IN -->
+    <!-- ========================= -->
+
     <fragment
         android:id="@+id/morningCheckInFragment"
         android:name="com.example.moodmatesleep.ui.morning.MorningCheckInFragment"
@@ -96,19 +138,77 @@
 
     </fragment>
 
+
+    <!-- ========================= -->
+    <!-- HABITS -->
+    <!-- ========================= -->
+
     <fragment
         android:id="@+id/habitsFragment"
         android:name="com.example.moodmatesleep.ui.habits.HabitsFragment"
         android:label="Habits" />
+
+
+    <!-- ========================= -->
+    <!-- SOUNDS -->
+    <!-- ========================= -->
 
     <fragment
         android:id="@+id/soundsFragment"
         android:name="com.example.moodmatesleep.ui.sounds.SoundsFragment"
         android:label="Sounds" />
 
+
+    <!-- ========================= -->
+    <!-- INSIGHTS -->
+    <!-- ========================= -->
+
     <fragment
         android:id="@+id/insightsFragment"
         android:name="com.example.moodmatesleep.ui.insights.InsightsFragment"
-        android:label="Insights" />
+        android:label="Insights">
+
+        <action
+            android:id="@+id/action_insightsFragment_to_sleepHistoryFragment"
+            app:destination="@id/sleepHistoryFragment" />
+
+    </fragment>
+
+
+    <!-- ========================= -->
+    <!-- SLEEP HISTORY -->
+    <!-- ========================= -->
+
+    <fragment
+        android:id="@+id/sleepHistoryFragment"
+        android:name="com.example.moodmatesleep.ui.history.SleepHistoryFragment"
+        android:label="Sleep History">
+
+        <action
+            android:id="@+id/action_sleepHistoryFragment_to_sleepDetailFragment"
+            app:destination="@id/sleepDetailFragment" />
+
+    </fragment>
+
+
+    <!-- ========================= -->
+    <!-- SLEEP DETAIL -->
+    <!-- ========================= -->
+
+    <fragment
+        android:id="@+id/sleepDetailFragment"
+        android:name="com.example.moodmatesleep.ui.history.SleepDetailFragment"
+        android:label="Sleep Detail" />
+
+
+    <!-- ========================= -->
+    <!-- PROFILE -->
+    <!-- ========================= -->
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.moodmatesleep.ui.profile.ProfileFragment"
+        android:label="Profile" />
+
 
 </navigation>
